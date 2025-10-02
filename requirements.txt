@@ -4,6 +4,7 @@ langchain-community
 langchain-groq
 llama_index
 llama-index-llms-langchain
+llama-index-llms-groq
 pypdf
 python-dotenv
 groq
