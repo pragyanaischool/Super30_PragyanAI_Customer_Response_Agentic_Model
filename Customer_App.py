@@ -1,7 +1,8 @@
 import streamlit as st
 from langchain_groq import ChatGroq
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
-from llama_index.llms.langchain import LangchainLLM
+#from llama_index.llms.langchain import LangchainLLM
+from llama_index.legacy.llms.langchain import LangchainLLM
 import os
 from dotenv import load_dotenv
 
