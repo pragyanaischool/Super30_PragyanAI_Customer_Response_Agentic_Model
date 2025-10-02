@@ -8,3 +8,6 @@ llama-index-llms-groq
 pypdf
 python-dotenv
 groq
+llama-index-embeddings-huggingface
+sentence-transformers
+torch
