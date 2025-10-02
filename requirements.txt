@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+groq
+llama-index
+pypdf
+python-dotenv
