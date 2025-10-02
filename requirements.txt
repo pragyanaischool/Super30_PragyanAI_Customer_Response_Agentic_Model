@@ -2,7 +2,7 @@ streamlit
 langchain
 langchain-community
 langchain-groq
-groq
-llama-index
+llama_index
 pypdf
 python-dotenv
+groq
