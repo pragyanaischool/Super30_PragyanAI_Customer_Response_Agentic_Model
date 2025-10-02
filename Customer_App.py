@@ -26,7 +26,7 @@ st.set_page_config(
     page_icon="🤖",
     layout="centered"
 )
-st.image("")
+st.image("PragyanAI_Transperent.png")
 st.title("🤖 PragyanAI Chat Assistant")
 st.caption("Welcome! I'm an AI assistant powered by Groq and LlamaIndex.")
 
