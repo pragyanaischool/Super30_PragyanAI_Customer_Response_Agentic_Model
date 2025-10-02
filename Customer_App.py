@@ -4,6 +4,7 @@ from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 #from llama_index.llms.langchain import LangchainLLM
 #from llama_index.llms.langchain import LangChainLLM
 #from llama_index.legacy.llms.langchain import LangchainLLM
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.groq import Groq
 import os
 from dotenv import load_dotenv
@@ -50,7 +51,13 @@ def load_query_engine():
     )
     
     # Configure LlamaIndex settings to use our LLM
-    Settings.llm = llm #LangchainLLM(llm=llm)
+    #Settings.llm = llm #LangchainLLM(llm=llm)
+    # Initialize a HuggingFace embedding model
+    embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+    
+    # Set the models in the global settings
+    Settings.llm = llm
+    Settings.embed_model = embed_model
     
     # Create the vector store index
     index = VectorStoreIndex.from_documents(documents)
