@@ -2,8 +2,9 @@ import streamlit as st
 from langchain_groq import ChatGroq
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 #from llama_index.llms.langchain import LangchainLLM
-from llama_index.llms.langchain import LangChainLLM
+#from llama_index.llms.langchain import LangChainLLM
 #from llama_index.legacy.llms.langchain import LangchainLLM
+from llama_index.llms.groq import Groq
 import os
 from dotenv import load_dotenv
 
@@ -44,12 +45,12 @@ def load_query_engine():
     # Initialize the Groq LLM
     llm = ChatGroq(
         api_key=GROQ_API_KEY,
-        model_name="llama3-8b-8192", 
+        model_name="llama-3.3-70b-versatile", 
         temperature=0.7
     )
     
     # Configure LlamaIndex settings to use our LLM
-    Settings.llm = LangchainLLM(llm=llm)
+    Settings.llm = llm #LangchainLLM(llm=llm)
     
     # Create the vector store index
     index = VectorStoreIndex.from_documents(documents)
